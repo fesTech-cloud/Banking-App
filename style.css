@@ -1,0 +1,598 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  color: #444;
+  background-color: #f4f1f1;
+  font-family: "Poppins", sans-serif;
+  /* padding: 2rem; */
+  /* padding: 2rem; */
+}
+
+#login_page {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 2rem;
+  /* background-color: rgb(212, 209, 209); */
+  box-shadow: -1px 10px 13px -8px rgba(242, 236, 236, 0.75);
+  -webkit-box-shadow: -1px 10px 13px -8px rgba(242, 236, 236, 0.75);
+  -moz-box-shadow: -1px 10px 13px -8px rgba(242, 236, 236, 0.75);
+  /* top: 0%; */
+}
+
+.owner_img img {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  border-radius: 50%;
+}
+
+.welcome {
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: -12rem;
+}
+
+.logo img {
+  width: 30vh;
+  margin-left: 8rem;
+  margin-right: 5rem;
+  position: absolute;
+  left: 35%;
+}
+
+.input input {
+  width: 40%;
+  padding: 10px 0px;
+  text-align: center;
+  border-radius: 15px;
+  font-weight: 10;
+  border: none;
+  letter-spacing: 2px;
+  margin-left: 10px;
+  /* background-color: rgb(243, 237, 237); */
+  outline: none;
+}
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(50, 49, 49);
+  cursor: pointer;
+}
+
+/* =======App ======= */
+#app {
+  margin-top: 3rem;
+  margin-right: 8rem;
+  margin-left: 8rem;
+  padding-bottom: 1rem;
+
+  /* ===hide opacity */
+  opacity: 0;
+  transition: all 1s;
+}
+
+/*  ====== Display Balance ====== */
+#display_balance {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.current-balance .balance_label {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  padding-bottom: 5px;
+}
+
+.current-balance .date-label {
+  color: rgb(151, 148, 148);
+}
+#display_balance .balance-label {
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+.name {
+  font-size: 13px;
+  padding-top: 5px;
+}
+
+/* =====Bank Operation ======== */
+#bank_operation_section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  /* align-items: flex-end; */
+  /* grid-template-columns: 5fr 5fr; */
+  /* display: flex;
+  align-items: flex-end;
+  justify-content: space-between; */
+}
+
+/* ======movements ========= */
+#movements {
+  width: 60%;
+  height: 30rem;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-right: 1rem;
+  /* padding: 2rem; */
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.movement_rows {
+  display: flex;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.115);
+  padding: 2rem;
+
+  /* margin: 2rem; */
+  font-size: 16px;
+  justify-content: space-between;
+}
+
+.movement_type_deposit {
+  background-color: rgba(0, 128, 0, 0.563);
+  padding: 0px 10px;
+  border-radius: 10px;
+  color: rgb(255, 253, 253);
+  margin-right: 10px;
+}
+.movement_date {
+  font-size: 12px;
+}
+
+.movement_type_withrawal {
+  background-color: rgba(249, 9, 17, 0.992);
+  padding: 0px 10px;
+  border-radius: 10px;
+  color: rgb(255, 253, 253);
+  margin-right: 10px;
+}
+
+.movement_value {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* ======= CONFIRM TRANSACTION ===== */
+/* ======= blur ======== */
+.container_blur {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 150%;
+  background-color: rgba(221, 217, 217, 0.704);
+  /* background-color: transparent; */
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+
+  z-index: 5;
+}
+
+.cormfim {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  background-color: floralwhite;
+  width: 30%;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.1);
+  line-height: 25px;
+  z-index: 10;
+  letter-spacing: 1px;
+}
+
+.comfirm_transfer {
+  display: grid;
+  grid-template-columns: 1fr 25px;
+  padding-bottom: 1rem;
+}
+.text {
+  width: 95%;
+}
+.cancel {
+  font-size: 2rem;
+  position: absolute;
+  left: 90%;
+  top: 5%;
+}
+.conmfirm_transaction {
+  color: greenyellow;
+  font-size: 1.5rem;
+}
+
+.receiver_name {
+  color: green;
+}
+
+/* ======transaction succeful ===== */
+.transaction {
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  background-color: floralwhite;
+  width: 30%;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.1);
+  line-height: 25px;
+  z-index: 10;
+  letter-spacing: 1px;
+}
+
+.transaction {
+  text-align: center;
+}
+
+/* ====== display hidden */
+.hidden {
+  display: none;
+}
+/* ====== Transactions ======== */
+#bank_trasaction {
+  /* background-color: aquamarine; */
+  height: 28rem;
+  width: 48%;
+  /* padding: 2rem; */
+}
+
+.operation {
+  padding-left: 2rem;
+  padding-top: 1rem;
+  color: black;
+  /*  */
+}
+
+.operation h2 {
+  font-size: 18px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.operation input {
+  width: 25%;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* background-color: #fff; */
+  padding: 3px 3px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.3s;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.input_form:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form_label {
+  font-size: 1rem;
+  margin: 0rem 1rem;
+}
+
+.operation_transfer {
+  background-color: rgba(3, 3, 70, 0.677);
+  padding-bottom: 2rem;
+  border-radius: 10px;
+}
+
+.add_savings {
+  background-color: rgba(255, 68, 0, 0.644);
+  padding-bottom: 2rem;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.loan {
+  background-color: rgba(25, 97, 3, 0.644);
+  padding-bottom: 2rem;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+/* ======Account format ======== */
+#account_format {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  text-transform: uppercase;
+  position: relative;
+  /* margin-bottom: 5rem; */
+  /* height: 10rem; */
+}
+
+.summary {
+  display: flex;
+  /* margin-top: 2rem; */
+  position: absolute;
+  margin-top: 5rem;
+  font-size: 10px;
+}
+.account_sum {
+  margin-right: 1rem;
+}
+
+.income {
+  color: green;
+  font-size: 0.8rem;
+  font-weight: 700;
+  /* margin-right: 2.5rem; */
+}
+
+.outcome {
+  color: red;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.save {
+  color: green;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.debt {
+  color: red;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* ===== sorting ====== */
+.sort {
+  position: absolute;
+  left: 50%;
+  margin-top: 3rem;
+}
+.sorting {
+  font-size: 1.2rem;
+  color: rgb(119, 116, 116);
+}
+
+.count_down {
+  margin-top: 30px;
+}
+
+/* ===== stock ====== */
+.stock_investment {
+  position: absolute;
+  right: 0%;
+}
+
+.stock_investment .stock_option {
+  padding: 1rem;
+  background-color: blue;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.stock_investment .stock_option option {
+  padding-top: 1rem;
+}
+
+/* ======== lOADING Spiner ========= */
+
+.display_loader {
+  position: absolute;
+  left: 45%;
+}
+
+/* generated by https://loading.io/ */
+
+/* #account-format {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-top: 5rem;
+}
+
+.account_sumarry {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.account_sumarry .pad {
+  padding-left: 1rem;
+} */
+
+@media screen and (max-width: 699px) and (min-width: 276px) {
+  #login_page {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+  }
+  .welcome {
+    font-size: 16px;
+    top: 10px;
+    position: relative;
+    left: -5%;
+    margin-bottom: 10px;
+    /* position: absolute; */
+  }
+  .logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* position: relative; */
+    /* top: 10px; */
+  }
+  .owner_img img {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 2rem;
+  }
+  .input {
+    top: 2.5rem;
+    width: 60%;
+    position: absolute;
+    left: 35%;
+  }
+  #login-form {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ====== balancE ====== */
+  #display_balance {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 10px;
+  }
+  #display_balance .current-balance p {
+    position: absolute;
+    left: -6.5rem;
+    font-size: 16px;
+  }
+  .date-label {
+    margin-top: 20px;
+  }
+  #display_balance .balance-label {
+    position: relative;
+    margin-left: 10.2rem;
+    font-size: 1.5rem;
+    top: 2rem;
+  }
+
+  /* ======== movement ======== */
+  #bank_operation_section {
+    display: block;
+    margin-top: 4rem;
+  }
+  #movements {
+    width: 90vw;
+    margin-left: -7rem;
+    position: absolute;
+    height: 15rem;
+    top: 32rem;
+  }
+  .movement_rows {
+    font-size: 16px;
+    padding: 10px;
+  }
+  .movement_date {
+    margin-left: -5px;
+    font-size: 6px;
+  }
+  .name {
+    font-size: 10px;
+    margin-left: 10px;
+  }
+  .movement_value {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .movement_type_deposit,
+  .movement_type_withrawal {
+    font-size: 5px;
+    padding: 2px 4px;
+  }
+  #bank_trasaction {
+    width: 90vw;
+    margin-left: -7rem;
+  }
+  .operation {
+    height: 20vh;
+    /* padding: 5px; */
+  }
+  .operation h2 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 14px;
+  }
+  .operation input {
+    margin-bottom: 10px;
+  }
+  .operation label {
+    font-size: 12px;
+  }
+
+  /* ===== account format ======= */
+  #account_format {
+    position: relative;
+    display: block;
+    top: 4rem;
+    width: 90vw;
+    margin-left: -7rem;
+  }
+  .summary {
+    font-size: 9px;
+  }
+  .income_Amount {
+    font-size: 12px;
+  }
+  .sorting {
+    position: relative;
+    left: 8rem;
+    top: 1.8rem;
+  }
+
+  .stock_investment {
+    position: relative;
+    top: 8rem;
+    width: 70vw;
+    margin-left: -2rem;
+  }
+  .stock_investment h2 {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .stock_investment .stock_option {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .form_stock {
+  }
+
+  .stock_option {
+    padding: 0px;
+    margin: 0px;
+  }
+  .count_down {
+    position: relative;
+    left: 8rem;
+    top: 3rem;
+  }
+
+  /*  ======== comfrim transaction==== */
+  .cormfim {
+    padding: 10px;
+    width: 70vw;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    margin-left: 30px;
+    font-size: 12px;
+  }
+  .receiver_name {
+    font-size: 14px;
+  }
+  .transaction {
+    width: 70vw;
+    margin-left: 20px;
+  }
+  .display_loader img {
+    width: 10vw;
+    margin-top: 8rem;
+  }
+}

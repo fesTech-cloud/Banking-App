@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Quru Bank</title>
+</head>
+
+<body>
+
+  <div id="login_page">
+    <span class="owner_img"><img src="Images/image1.jpg" alt="image" id="display_img_owner"></span>
+    <span class="welcome">Login to Quru Bank</span>
+    <span class="logo"><img src="Images/logo-light.svg" alt=""></span>
+    <span class="input">
+      <form action="" id="login-form">
+        <input type="text" placeholder="User" id="user">
+        <input type="password" id="pin" placeholder="Pin">
+        <button id="login">&rarr;</button>
+      </form>
+    </span>
+  </div>
+
+  <!-- ======= Container-App -->
+
+  <div class="display_loader hidden">
+    <img src="Images/Ripple-1.2s-200px.svg" alt="">
+  </div>
+
+  <main id="app">
+    <!-- ======Display Balance ===== -->
+    <div id="display_balance">
+
+      <div class="current-balance">
+        <P class="balance_label">Current Balance</P>
+        <P class="date-label">As of <span id="date">20/10/22</span></P>
+
+      </div>
+      <div class="balance-label">3840₦</div>
+    </div>
+
+
+    <div id="bank_operation_section">
+      <!-- ===== Bank Sheet ===== -->
+      <div id="movements">
+
+        <!-- <div class="movement_rows">
+          <div class="movement-row">
+            <span class="movement_type_deposit">1 deposit</span>
+            <span class="movement_date">3 days ago</span>
+          </div>
+          <span class="name">festus transfered</span>
+          <span class="movement_value">30000₦</span>
+        </div>
+
+        <div class="movement_rows">
+          <div class="movement_row">
+            <span class="movement_type_withrawal">2 withrawal</span>
+            <span class="movement_date">20 / 9 / 22</span>
+          </div>
+          <span class="name">You transfered festus</span>
+          <span class="movement_value">30000₦</span>
+        </div> -->
+      </div>
+
+
+
+      <!-- ===== Bank Transaction ===== -->
+      <div id="bank_trasaction">
+        <!-- ======Transfer Fund =====-->
+        <div class="operation operation_transfer">
+          <h2>Transfer Money</h2>
+          <form action="" class="form_transfer">
+            <input type="text" class="input_form transfer_to">
+            <input type="number" class="input_form input_amount">
+            <button class="transfer_button">&rarr;</button> <br>
+            <label for="" class="form_label">Transfer To</label>
+            <label for="" class="form_label">Amount</label>
+          </form>
+        </div>
+
+        <!-- =======Add Savings -->
+        <div class="operation add_savings">
+          <h2> Add Savings</h2>
+          <form action="" class="">
+            <input type="number" class="input_form input_savings">
+            <button class="add_savings_button">&rarr;</button> <br>
+            <label for="" class="form_label">Amount</label>
+          </form>
+        </div>
+
+        <div class="operation loan">
+          <h2>Loan Money</h2>
+          <form action="">
+            <input type="number" class="input_form input_loan_amount">
+            <button class="submit_loan">&rarr;</button> <br>
+            <label for="" class="form_label">Amount</label>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCOUNT SUMMARY -->
+    <div id="account_format">
+      <!-- account summary -->
+      <div class="summary">
+        <div class="account_sum">In: <span class="income_Amount income"></span></div>
+        <div class="account_sum">Out: <span class="income_Amount outcome"></span></div>
+        <div class="account_sum">Saving: <span class="income_Amount save"> </span></div>
+        <div class="account_sum">Debt: <span class="income_Amount debt"> None</span></div>
+      </div>
+
+      <div class="sort">
+        <button class="sorting">&darr;Sort</button>
+        <div class="count_down">05: 10</div>
+      </div>
+      <!-- =======Stock Investment ======== -->
+      <div class="operation stock_investment">
+        <h2>Stocks Investment Option</h2>
+        <form action="" class="form_stock">
+          <select name="Stock" class="stock_option">
+            <option value="Choose">Stocks Investment Options</option>
+
+            <a href="#">
+              <option value="tesla_stock">Tesla Stock</option>
+            </a>
+            <a href="#">
+              <option value="paystack_stock">Paystack Stock</option>
+            </a>
+            <a href="#">
+              <option value="apple_stock">Apple Stock</option>
+            </a>
+            <a href="#">
+              <option value="amazon_stock">Amazon Stock</option>
+            </a>
+          </select>
+          <button class="stock_button">&rarr;</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+  <div class="container_blur hidden"> </div>
+
+  <!-- ====== Transfer Comfirmation ====== -->
+  <div class="cormfim hidden">
+    <div class="comfirm_transfer">
+      <span class="text">Do you want to transfer money to <b class="receiver_name">festus omorowa</b> please
+        there
+        are lots of
+        scam and when u Comfirm your
+        transaction Quru bank will not be held responsible</span>
+      <span><button class="cancel">&times;</button></span>
+    </div>
+    <button class="conmfirm_transaction">Comfirm</button>
+  </div>
+
+  <!-- ========= Transaction successful ========= -->
+  <div class="transaction hidden">
+    <div class="comfirm_transfer">
+      <span class="text">Transaction successful</span>
+    </div>
+    <button class="conmfirm_transaction" id="succesful">OK</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
